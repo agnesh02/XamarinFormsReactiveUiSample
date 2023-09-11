@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="ReactiveUiSample.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Application.Resources>
+        <!--<Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="Orange" />
+            <Setter Property="BarTextColor" Value="Black" />
+            <Setter Property="TitleView">
+                <Setter.Value>
+                    <StackLayout>
+        -->
+        <!--  Add your custom content here  -->
+        <!--  You can adjust the padding/margin using Spacing or Padding  -->
+        <!--  For example, to reduce top margin, use Padding:  -->
+        <!--
+                        <OnPlatform x:TypeArguments="Thickness"
+                                    iOS="0, -10, 0, 0"
+                                    Android="0, -10, 0, 0"
+                                    WinPhone="0, -10, 0, 0" />
+                    </StackLayout>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+
+    </Application.Resources>
+</Application>

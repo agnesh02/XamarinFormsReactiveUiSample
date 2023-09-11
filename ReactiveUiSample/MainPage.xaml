@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ReactiveUiSample.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ReactiveUiSample.ViewModel"
+    Title="React UI Sample">
+
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+
+        <Frame
+            Padding="12"
+            BackgroundColor="ForestGreen"
+            CornerRadius="0">
+            <Label
+                FontSize="Title"
+                HorizontalTextAlignment="Center"
+                Text="Trial concepts"
+                TextColor="White" />
+        </Frame>
+        <Label
+            Margin="10,0,0,0"
+            FontAttributes="Italic"
+            FontSize="Medium"
+            HorizontalOptions="Center"
+            Text="@agnesh"
+            TextColor="Black" />
+
+        <Button
+            Margin="0,200,0,0"
+            Clicked="NavigateToLoginPage"
+            Command="{Binding sampleFunction}"
+            HorizontalOptions="Center"
+            Text="Value change"
+            WidthRequest="200" />
+
+        <Button
+            Margin="0,10,0,0"
+            Clicked="NavigateToColourSelectorPage"
+            HorizontalOptions="Center"
+            Text="Colour selector"
+            WidthRequest="200" />
+
+        <Button
+            Margin="0,10,0,0"
+            Clicked="NavigateToContactsPage"
+            HorizontalOptions="Center"
+            Text="Contacts"
+            WidthRequest="200" />
+
+
+    </StackLayout>
+
+</ContentPage>

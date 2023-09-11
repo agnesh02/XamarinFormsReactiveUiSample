@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ReactiveUiSample.View.ColourSelectorPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ReactiveUiSample.ViewModel"
+    Title="Select a colour combo">
+
+    <ContentPage.BindingContext>
+        <local:ColourSelectorViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Label
+            Margin="10,20,0,0"
+            FontSize="Large"
+            Text="{Binding RedValue, StringFormat='Red ({0:F0})'}"
+            VerticalOptions="Center" />
+        <Slider
+            x:Name="RedSlider"
+            Maximum="255"
+            MaximumTrackColor="OrangeRed"
+            Minimum="0"
+            MinimumTrackColor="Red"
+            ThumbColor="Red"
+            WidthRequest="250"
+            Value="{Binding RedValue}" />
+
+        <Label
+            Margin="10,20,0,0"
+            FontSize="Large"
+            Text="{Binding GreenValue, StringFormat='Green ({0:F0})'}"
+            VerticalOptions="Center" />
+        <Slider
+            x:Name="GreenSlider"
+            Maximum="255"
+            MaximumTrackColor="LightGreen"
+            Minimum="0"
+            MinimumTrackColor="Green"
+            ThumbColor="ForestGreen"
+            WidthRequest="250"
+            Value="{Binding GreenValue}" />
+        <Label
+            Margin="10,20,0,0"
+            FontSize="Large"
+            Text="{Binding BlueValue, StringFormat='Blue ({0:F0})'}"
+            VerticalOptions="Center" />
+        <Slider
+            x:Name="BlueSlider"
+            Maximum="255"
+            MaximumTrackColor="DeepSkyBlue"
+            Minimum="0"
+            MinimumTrackColor="Blue"
+            ThumbColor="DeepSkyBlue"
+            WidthRequest="250"
+            Value="{Binding BlueValue}" />
+
+        <BoxView
+            Margin="0,50,0,0"
+            BackgroundColor="{Binding FinalValue}"
+            HeightRequest="100"
+            HorizontalOptions="Center"
+            WidthRequest="100" />
+
+        <Label
+            Margin="10,20,0,0"
+            HorizontalOptions="Center"
+            Text="{Binding FinalValue}"
+            VerticalOptions="Center" />
+
+        <Label FontSize="Large" HorizontalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="(" />
+                        <Span Text="{Binding FinalValue.R}" TextColor="Red" />
+                        <Span Text=", " />
+                        <Span Text="{Binding FinalValue.B}" TextColor="ForestGreen" />
+                        <Span Text=", " />
+                        <Span Text="{Binding FinalValue.G}" TextColor="RoyalBlue" />
+                        <Span Text=")" />
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label
+            FontAttributes="Bold"
+            FontSize="Body"
+            HorizontalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="(" />
+                        <Span Text="R, G, B" />
+                        <Span Text=")" />
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+    </StackLayout>
+
+</ContentPage>

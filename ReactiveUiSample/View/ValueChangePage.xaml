@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ReactiveUiSample.View.ValueChangePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ReactiveUiSample.ViewModel"
+    Title="Change slider / text value">
+
+
+    <ContentPage.BindingContext>
+        <local:ValueChangeViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+
+
+        <Label
+            Margin="0,20,0,0"
+            FontSize="17"
+            HorizontalOptions="Center"
+            Text="Using data binding"
+            TextColor="Black" />
+
+        <Label
+            Margin="0,20,0,0"
+            BindingContext="{x:Reference Slider}"
+            FontSize="17"
+            HorizontalOptions="Center"
+            Opacity="{Binding Value}"
+            Text="My opacity changes"
+            TextColor="Black" />
+
+        <Slider
+            x:Name="Slider"
+            Margin="0,20,0,0"
+            HorizontalOptions="Center"
+            MaximumTrackColor="Red"
+            MinimumTrackColor="Blue"
+            WidthRequest="250" />
+        <Label
+            BindingContext="{x:Reference Slider}"
+            FontSize="17"
+            HorizontalOptions="Center"
+            Text="{Binding Value, StringFormat='Current opacity: {0:P0}'}"
+            TextColor="DodgerBlue" />
+
+        <Label
+            Margin="0,20,0,0"
+            FontSize="17"
+            HorizontalOptions="Center"
+            Text="----------------------------------------------------------------------------------"
+            TextColor="Black" />
+
+        <Label
+            Margin="0,20,0,0"
+            FontSize="17"
+            HorizontalOptions="Center"
+            Text="Using viewmodel"
+            TextColor="Black" />
+
+        <Entry
+            FontSize="17"
+            HorizontalOptions="Center"
+            Text="{Binding InputText}"
+            TextColor="Black"
+            WidthRequest="200" />
+        <Label
+            FontSize="17"
+            HorizontalOptions="Center"
+            Text="{Binding InputText}"
+            TextColor="Black" />
+
+        <Label
+            Margin="0,20,0,0"
+            FontSize="17"
+            HorizontalOptions="Center"
+            Text="----------------------------------------------------------------------------------"
+            TextColor="Black" />
+
+
+        <Label
+            Margin="0,50,0,0"
+            BindingContext="{x:Reference RotationSlider}"
+            FontSize="17"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Rotation="{Binding Value}"
+            Text="{Binding Value, StringFormat='Hi I can rotate.&#x0a;My angle is {0:F2}'}"
+            TextColor="DarkViolet" />
+
+
+        <Slider
+            x:Name="RotationSlider"
+            Margin="0,40,0,0"
+            HorizontalOptions="Center"
+            Maximum="360"
+            MaximumTrackColor="Violet"
+            MinimumTrackColor="Orange"
+            ThumbColor="Green"
+            WidthRequest="250" />
+    </StackLayout>
+</ContentPage>
